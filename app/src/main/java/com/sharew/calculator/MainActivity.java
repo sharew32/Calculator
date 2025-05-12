@@ -1,4 +1,5 @@
 package com.sharew.calculator;
+import android.content.Intent;
 
 import android.os.Bundle;
 import android.webkit.WebSettings;
@@ -63,10 +64,19 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+//        if (id == R.id.menu_about) {
+//            Toast.makeText(this, "Calculator by Sharew", Toast.LENGTH_SHORT).show();
+//            return true;
+//
+//
+//    }
         if (id == R.id.menu_about) {
-            Toast.makeText(this, "Calculator by Sharew", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, AboutActivity.class));
             return true;
-        } else if (id == R.id.menu_update) {
+        }
+
+
+        else if (id == R.id.menu_update) {
             Toast.makeText(this, "Check Play Store for updates", Toast.LENGTH_SHORT).show();
             return true;
         } else if (id == R.id.menu_settings) {
